@@ -1,0 +1,278 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial;
+
+}
+body{
+    background:url('https://definicion.com/wp-content/uploads/2022/09/imagen.jpg') ;
+
+    background-size:cover;
+    height: 100vh;
+    background-position: center;
+}
+header{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position:static; 
+    z-index: 99;
+    box-shadow: 0 0 12px #ff0077;
+    background: rgba(0, 0, 0, 0.9);
+}
+#chk1{
+    display: none;
+}
+i{
+    color: #ffffff;
+    cursor: pointer;
+}
+header .logo{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    color: #ff0077;
+    margin-left: 50px;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+.logo1{
+    box-shadow:0 2px  blue;
+    padding: 2px;
+}
+#logo2{
+    color: blue;
+    box-shadow: 0 2px  0 #ff0077;
+    padding: 2px;
+    
+}
+header .search-box{
+    flex: 1;
+    position: relative;
+}
+
+.search-box input{
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    background: #f2f2f2;
+    border-radius: 30px;
+    color: gray;
+    font-size: 16px;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 40px;
+}
+.search-box button{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    position: absolute;
+    top:0;
+    right: 0;
+    transform: scale(0.9);
+    background: green;
+}
+header ul{
+    flex: 2;
+    display: flex;
+    justify-content: space-evenly;
+}
+header ul li{
+    list-style: none;
+    position: relative; /* Necesario para la posición de los submenús */
+}
+
+header ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px 15px;
+}
+header ul li a:hover{
+    border-bottom: 2px solid #ff0077;
+}
+header .menu{
+    font-size: 2.5em;
+    display: none;
+}
+header ul li ul.submenu {
+    display: none; /* Ocultamos el submenú por defecto */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    min-width: 180px;
+    z-index: 1;
+
+}
+header ul li ul.submenu li {
+    margin-bottom: 10px; /* Separa los elementos dentro del submenú */
+}
+header ul li:hover > ul.submenu {
+    display: block; /* Mostramos el submenú cuando el padre se pasa el ratón por encima */
+    padding: 10px;
+    margin: 5px 10px;
+}
+/* rotacion del h2*/
+.rotate-center {
+	-webkit-animation: rotate-center 0.7s ease-in-out both;
+	        animation: rotate-center 0.7s ease-in-out both;
+}
+
+ @-webkit-keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  @keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  
+/* Estilo de la sección de artículos */
+#articulos {
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+#articulos h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.articulo {
+    display: inline-block;
+    width: 30%;
+    margin: 15px;
+    padding: 15px;
+    background-color: rgba(248, 246, 246, 0.797);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.articulo img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.articulo .contenido {
+    padding: 15px 0;
+}
+
+.articulo h3 {
+    font-size: 22px;
+    color: #000;
+    margin: 10px 0;
+}
+
+.articulo p {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.articulo a {
+    font-size: 16px;
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.articulo a:hover {
+    text-decoration: underline;
+}
+
+figcaption {
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 400px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo translúcido */
+    color: white;
+    padding: 5px;
+  }
+#carouselExampleSlidesOnly{
+    padding: 10px;
+}
+img{
+
+    height: 250px;
+}
+
+footer{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: rgb(0,0,0,0.5);
+    color: #fff;
+    height: 10%;
+    align-items: center;
+
+    
+}
+@media(max-width:1000px){
+    .search-box button{
+        position: absolute;
+    }
+    header ul{
+        position: fixed;
+        top: 100px;
+        right: -100%;
+        background: rgb(0,0,0,0.5);
+        height: calc(100vh - 100px);
+        width: 50%;
+        flex-direction: column;
+        align-items: center;
+        transition: right 0.5s linear;
+    }
+    header .menu{
+        display: block;
+        width: 100px;
+        text-align: center;
+    }
+    #chk1:checked ~ ul{
+        right: 0;
+    }
+}
+@media(max-width:600px){
+    header .logo{
+        font-size: 10px;
+        margin-left: 8px;
+    }
+    header ul{
+        width: 100%;
+    }
+    main{ 
+        width: 250px;
+        height: 200px;
+        border-radius: 30px;
+    
+    }
+    iframe{
+        width: 250px;
+    
+    }
+}

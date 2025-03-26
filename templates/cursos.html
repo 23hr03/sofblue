@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sección de Videos del Curso</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stilos_cursos.css') }}"></head>
+<body>
+    <header>
+        <h1>Videos del Curso</h1>
+    </header>
+    <section class="video-section">
+        <div class="video-container">
+            <h2>Clase 1: Introducción</h2>
+            <video controls>
+                <source src="ruta_del_video1.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </div>
+        <div class="video-container">
+            <h2>Clase 2: Conceptos Básicos</h2>
+            <video controls>
+                <source src="ruta_del_video2.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </div>
+        <div class="video-container">
+            <h2>Clase 3: Práctica</h2>
+            <video controls>
+                <source src="ruta_del_video3.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </div>
+    </section>
+</body>
+</html>

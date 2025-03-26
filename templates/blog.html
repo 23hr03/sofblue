@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Blog</title>
+  <!-- Font Awesome para los iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Enlace al archivo CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/blog.css') }}">
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <header>
+    <input type="checkbox" class="" id="chk1">
+    <div class="logo">
+      <h1 class="logo1">Soft </h1>
+      <h1 class="rotate-center" id="logo2">blue</h1>
+    </div>
+    <div class="search-box">
+      <form action="">
+        <input type="text" name="search" id="srch" placeholder="Search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+    <ul>
+      <li><a href="Home">Home</a></li>
+      <li><a href="#">Cursos</a>
+          <ul class="submenu">
+              <li><a href="#">Cursos</a></li>
+              <li><a href="#">Cursos</a></li>
+          </ul>
+      </li>
+      <li><a href="blog">Blog</a></li>
+      <li><a href="#">Ubicacion</a></li>
+      <li>
+        <a href=""><i class="fab fa-facebook" style="color: #3b5998;"></i></a>
+        <a href=""><i class="fab fa-twitter" style="color: #1da1f2;"></i></a>
+        <a href="https://www.instagram.com/alrensport?igsh=MThmajRyM2ZwbXAYg=="><i class="fab fa-instagram" style="color: #ff0077;"></i></a>
+      </li>
+    </ul>
+    <div class="menu">
+      <label for="chk1">
+        <i class="fa fa-bars"></i>
+      </label>
+    </div>
+  </header>
+
+  <!-- Contenedor principal -->
+  <div class="container">
+    
+    <!-- Barra lateral -->
+    <aside class="sidebar">
+      <h3>Acerca del autor</h3>
+      <!-- Asegúrate de que la imagen esté en la ruta correcta -->
+      <img src="{{ url_for('static', filename='img/images.jpg') }}" alt="Foto del autor" class="author-img">
+      <p>Hola, soy Soft Blue. Bienvenido a mi blog donde comparto sobre artículos de belleza, diseño y más.</p>
+      
+      <h3>Categorías</h3>
+      <ul>
+        <li><a href="#">Cursos</a></li>
+        <li><a href="#">Diseño</a></li>
+        <li><a href="#">Productos de belleza</a></li>
+        <li><a href="#">Ubicación</a></li>
+      </ul>
+      <p> Nuestras redes son: 
+        <a href="https://www.instagram.com/alrensport?igsh=MThmajRyM2ZwbXAYg=="><i class="fab fa-instagram" style="color: #ff0077;"></i></a>,
+        <a href=""><i class="fab fa-facebook" style="color: #3b5998;"></i></a>,
+        <a href=""><i class="fab fa-tiktok" style="color:  #000;"></i></a>
+      </p>
+    </aside>
+
+    <!-- Sección de contenido principal -->
+    <main class="content">
+      <article class="post">
+        <img src="{{ url_for('static', filename='img/Publicidad.jpg') }}" alt="Post 1" class="post-img">
+        <h2>Cómo aprender JavaScript en 2023</h2>
+        <p class="post-date">Publicado el 20 de enero de 2023</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac erat ut nisl fermentum bibendum...</p>
+        <a href="#" class="read-more">Leer más</a>
+      </article>
+
+      <article class="post">
+        <img src="{{ url_for('static', filename='img/Publicidad.jpg') }}" alt="Post 2" class="post-img">
+        <h2>Los mejores recursos para diseñadores web</h2>
+        <p class="post-date">Publicado el 15 de enero de 2023</p>
+        <p>Curabitur vehicula, nulla eget gravida tempus, felis mi dapibus turpis, sit amet ullamcorper neque risus...</p>
+        <a href="#" class="read-more">Leer más</a>
+      </article>
+
+      <!-- Puedes añadir más artículos aquí -->
+    </main>
+  </div>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>&copy; 2023 Mi Blog. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

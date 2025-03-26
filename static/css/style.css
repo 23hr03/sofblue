@@ -1,0 +1,217 @@
+/* Estilos para el formulario y los botones */
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: arial;
+}
+
+body {
+    background:url('https://wallpaper.forfun.com/fetch/5e/5ebc60a7c49b74b0bfaa19d0da2860cd.jpeg') ;
+    background-size:cover;
+    height: 100vh;
+    background-position: center;
+}
+header{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* position: fixed; */
+    z-index: 99;
+    box-shadow: 0 0 12px #ff0077;
+    background: rgba(0, 0, 0, 0.9);
+}
+#chk1{
+    display: none;
+}
+i{
+    color: #ffffff;
+    cursor: pointer;
+}
+header .logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    color: #ff0077;
+    margin-left: 100px;
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+.logo1{
+    box-shadow:0 2px  blue;
+    padding: 2px;
+}
+#logo2{
+    color: blue;
+    box-shadow: 0 2px  0 #ff0077;
+    padding: 2px;
+    
+}
+.rotate-center {
+	-webkit-animation: rotate-center 0.7s ease-in-out both;
+	        animation: rotate-center 0.7s ease-in-out both;
+}
+
+ @-webkit-keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  @keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+header .search-box{
+    flex: 1;
+    position: relative;
+}
+
+header ul{
+    flex: 2;
+    display: flex;
+    justify-content: end;
+}
+
+header ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px 15px;
+}
+header ul li a:hover{
+    border-bottom: 2px solid #ff0077;
+}
+header .menu{
+    font-size: 2.5em;
+    display: none;
+}
+header ul li ul.submenu {
+    display: none; /* Ocultamos el submenú por defecto */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    min-width: 180px;
+    z-index: 1;
+
+}
+header ul li ul.submenu li {
+    margin-bottom: 10px; /* Separa los elementos dentro del submenú */
+}
+
+/* rotacion del h2*/
+.rotate-center {
+	-webkit-animation: rotate-center 0.7s ease-in-out both;
+	        animation: rotate-center 0.7s ease-in-out both;
+}
+.button-container{
+    align-items: center;
+}
+
+button {
+    
+    margin-right: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    
+}
+
+.form-section {
+    display: none;
+}
+
+.form-section.active {
+    display: block;
+    margin-bottom: 5px;
+}
+input[tye="button"]{
+    margin-right: 5px;
+    padding: 10;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ff0077;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    margin-right: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+form {
+    
+    max-width: 400px;
+    margin: 70px auto;
+    padding: 20px;
+    background-color: rgba(248, 246, 246, 0.797);
+    border: 2px solid #ff0077;
+    border-radius: 10px;
+}
+input[type="submit"]:hover {
+    background-color: #0056b3;
+    
+}
+button:hover {
+    background-color: #0056b3;
+}
+#app h2{ 
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    color: #fff;
+    align-items: center;
+    padding: 20px;
+
+}
+
+footer{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: rgb(0,0,0,0.5);
+    height: 30%;
+    align-items: center;
+    color: #fff;
+    
+}
+
+#form-container{
+    margin-top: 150px ;
+}
+@font-face {
+    font-family: 'MiFuente';
+    src: url('miFuente.woff2') format('woff2');
+    font-display: swap;
+  }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Registro/Login</title>
+  <!-- Font Awesome para los iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Enlace al archivo CSS -->
+  <link rel="stylesheet"  href="{{ url_for('static', filename='css/style.css') }}">
+  <!-- Cargar Vue primero -->
+  <script src="https://unpkg.com/vue@3.2.0/dist/vue.global.prod.js"></script>
+</head>
+<body>
+    <header>
+        <input type="checkbox" class="" id="chk1">
+        <div class="logo">
+          <h1 class="logo1">Soft </h1>
+          <h1 class="rotate-center" id="logo2">blue</h1>
+        </div>
+        <ul>
+          <li><a href="#">Ubicación</a></li>
+          <li>
+            <a href=""><i class="fab fa-facebook" style="color: #3b5998;"></i></a>
+            <a href=""><i class="fab fa-twitter " style="color: #1da1f2;"></i></a>
+            <a href="https://www.instagram.com/alrensport?igsh=MThmajRyM2ZwbXAYg=="><i class="fab fa-instagram" style="color: #ff0077;"></i></a>
+          </li>
+        </ul>
+        <div class="menu">
+          <label for="chk1">
+            <i class="fa fa-bars"></i>
+          </label>
+        </div>
+    </header>
+
+    <!-- Contenedor de Vue -->
+    <div id="app"></div> <!-- Vue controlará este div -->
+
+    <!-- Cargar el archivo JS de Vue después de Vue -->
+    <script src="{{ url_for('static', filename='js/config.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    
+    <script src="{{ url_for('static', filename='js/popupMobile.js') }}"></script>
+
+    <footer> 
+      <p>Derechos reservados al autor 2025</p>
+      <a href=""><i class="fab fa-facebook" style="color: #3b5998;"></i></a>
+      <a href=""><i class="fab fa-twitter" style="color: #1da1f2;"></i></a>
+      <a href="https://www.instagram.com/alrensport?igsh=MThmajRyM2ZwbXAYg=="><i class="fab fa-instagram" style="color: #ff0077;"></i></a>
+    </footer>
+</body>
+</html>
