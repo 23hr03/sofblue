@@ -82,7 +82,7 @@ migrate = Migrate(app, db)
 ma = Marshmallow(app)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
-login_manager.login_view = 'login'  # Redirigir a login si no está autenticadoo
+login_manager.login_view = 'index'  # Redirigir a login si no está autenticadoo
 
 # Definición del modelo
 class Registro(UserMixin,db.Model):
@@ -180,7 +180,6 @@ def iniciar_Session():
     data = request.get_json()
     email = data.get("email")
     password = data.get("password")
-
     print(f"Recibido: Email: {email}, Contraseña: {password}") 
     
     if len(password) < 6:
@@ -192,11 +191,14 @@ def iniciar_Session():
     
      # Buscar el usuario en la base de datos por el correo electrónico
     usuario = Registro.query.filter_by(email=email).first()
-
     if usuario and bcrypt.check_password_hash(usuario.contraseña, password):
-     login_user(usuario)  # Autentica al usuario
-     return jsonify({"message": "Login exitoso"}), 200
-
+        login_user(usuario)  # Autentica al usuario con Flask-Login
+        session['nombre'] = usuario.usuario  # Guardar el nombre en la sesión
+        print("usuario encontrado:",session)
+        return jsonify({
+            "message": "Login exitoso",
+            "redirect": url_for('Home', _external=True)  # URL completa para /Home
+        }), 200
     else:
         return jsonify({"message": "Credenciales inválidas"}), 401
     
@@ -209,7 +211,7 @@ def iniciar_Session():
 @login_required
 def logout():
     logout_user()  # Finalizar sesión del usuario
-    return redirect(url_for('login'))  # Redirigir al login
+    return redirect(url_for('index'))  # Redirigir al login
 
 #======================================================================================================================
 #================================ Cambiar de contraseña de forma basica ==============================================
@@ -281,12 +283,13 @@ def actualizar():
     return render_template("cambiar_contraseña.html")
 #=============================================================
 @app.route("/index")
-def login():
+def index():
     return render_template("index.html")
 #=============================================
 @app.route("/Home")
-def home():
-    return render_template("Home.html")
+@login_required  # Requiere que el usuario esté autenticado
+def Home():
+    return render_template("Home.html", usuario=current_user.usuario)
 #============================================
 
 @app.route("/blog")

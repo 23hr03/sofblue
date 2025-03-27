@@ -4,7 +4,7 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
-      formType: 'login', // 'login' o 'registro'
+      formType: 'index', // 'login' o 'registro'
       email: '',
       password: '',
       username: '',
@@ -34,11 +34,15 @@ createApp({
     
         const data = await response.json();
         this.cargando = false;
-    
         if (response.ok) {
           alert("Login exitoso.");
           this.resetForm(); // Limpiar formulario
-          window.location.href = '/Home'; // Redirigir a la página de inicio
+          // Usar la URL de redirección del backend en lugar de una fija
+          if (data.redirect) {
+            window.location.href = data.redirect; // Redirige a http://localhost:5000/Home
+          } else {
+            window.location.href = `${apiBaseUrl}/Home`; // Fallback por si no hay redirect
+          }
         } else {
           this.requestMonitor = data;
           alert(data.message || "Credenciales inválidas.");
@@ -50,6 +54,7 @@ createApp({
         alert("Error al iniciar sesión.");
       }
     },
+    
 
     async logout() {
       try {
@@ -59,7 +64,7 @@ createApp({
         });
         if (response.ok) {
           localStorage.removeItem('usuario'); // Limpia el usuario del localStorage
-          window.location.href = '/login'; // Redirige a la página de login
+          window.location.href = '/index'; // Redirige a la página de login
         } else {
           alert("Error al cerrar sesión.");
         }
@@ -92,7 +97,7 @@ createApp({
         if (response.ok) {
           alert("Registro exitoso.");
           this.resetForm(); // Limpiar formulario
-          this.showForm('login');
+          this.showForm('index');
         } else {
           this.requestMonitor = data;
           alert(data.message || "Error al registrar usuario.");
@@ -204,7 +209,7 @@ createApp({
   },
   template: `
     <div>
-      <div v-if="formType === 'login'">
+      <div v-if="formType === 'index'">
         <h2>Inicio de sesión</h2>
         <form @submit.prevent="validarLogin">
           <label for="login-email">Correo Electrónico:</label>
