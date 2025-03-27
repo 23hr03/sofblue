@@ -220,8 +220,9 @@ createApp({
 
           <input type="submit" value="Iniciar Sesión">
           <button type="button" @click="showForm('registro')">Regístrate</button>
-          <button type="button" @click="showForm('cambio_C')">Olvidé mi contraseña</button>
+          <a class="con_cont"  href="actualizar"> Olvide mi contraseña  </a>
         </form>
+        
       </div>
 
       <div v-if="formType === 'registro'">
@@ -237,20 +238,9 @@ createApp({
           <input type="password" v-model="password" id="registro-password" required><br>
 
           <input type="submit" value="Registrarse">
-          <button type="button" @click="showForm('login')">Iniciar sesión</button>
+          <button type="button" @click="showForm('index')">Iniciar sesión</button>
         </form>
       </div>
-
-     <div v-if="formType === 'buscar'">
-      <h2>Buscar Usuario</h2>
-      <form @submit.prevent="buscarUsuario">
-        <label>Usuario:</label>
-        <input v-model="username" type="text" required>
-        <label>Correo:</label>
-        <input v-model="email" type="email" required>
-        <button type="submit" :disabled="loading">Buscar</button>
-      </form>
-    </div>
 
     <div v-if="formType === 'cambiar'">
       <h2>Cambiar Contraseña</h2>
@@ -260,7 +250,6 @@ createApp({
       <button type="submit" :disabled="loading">Actualizar</button>
     </form>
     </div>
-    
 
       <div v-if="cargando">Cargando...</div>
       <div v-if="error">Hubo un error en la operación.</div>

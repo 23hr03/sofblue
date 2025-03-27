@@ -167,6 +167,9 @@ input[type="submit"] {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    display: flex;
+    display: table-column-group;
+    align-items: end;
 }
 form {
     
@@ -176,6 +179,12 @@ form {
     background-color: rgba(248, 246, 246, 0.797);
     border: 2px solid #ff0077;
     border-radius: 10px;
+}
+.con_cont{
+    text-decoration: none;
+    display: flex;
+    justify-content: end;
+    color: #0056b3;
 }
 input[type="submit"]:hover {
     background-color: #0056b3;

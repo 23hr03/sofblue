@@ -8,7 +8,15 @@
 <body>
     
 
-    <p><a href="/login">Volver al inicio de sesión</a></p>
+    <p><a href="index">Volver al inicio de sesión</a></p>
+    <div v-if="formType === 'cambiar'">
+        <h2>Cambiar Contraseña</h2>
+        <form @submit.prevent="cambiarContraseña">
+          <label>Nueva Contraseña:</label>
+          <input v-model="nuevaContraseña" type="password" required>
+        <button type="submit" :disabled="loading">Actualizar</button>
+      </form>
+      </div>
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 </html>
